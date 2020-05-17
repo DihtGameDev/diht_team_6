@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Archer : MonoBehaviour
+public class archer : MonoBehaviour
 {
-    public float speed;
-    public FloatingJoystick variableJoystick;
-    public Rigidbody rb;
-    public Vector3 kek;
+    public Joystick joystick;
+    protected float speed = 30f;
+    protected  Vector2 velocity;
+    protected Rigidbody2D rb;
 
-    public void FixedUpdate()
+    // Start is called before the first frame update
+    void Start()
     {
-        
-        Vector3 direction = Vector3.forward * variableJoystick.Vertical + Vector3.right * variableJoystick.Horizontal;
-        rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
-        this.kek = variableJoystick.Direction;
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void FixedUpdate()
+    {
+        velocity = new Vector2(joystick.Horizontal * speed, joystick.Vertical * speed);
+        rb.velocity = velocity;
+
     }
 }
