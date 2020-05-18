@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class archer : MonoBehaviour
 {
-    public Joystick joystick;
-    protected float speed = 30f;
-    protected  Vector2 velocity;
-    protected Rigidbody2D rb;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    [SerializeField] private Joystick joystick;
+    [SerializeField] private float speed = 30f;
+    private Vector2 velocity;
+    [SerializeField] private Rigidbody2D rb;
 
     void FixedUpdate()
     {
