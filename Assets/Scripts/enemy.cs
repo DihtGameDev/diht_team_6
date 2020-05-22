@@ -23,8 +23,12 @@ public class enemy : MonoBehaviour
     {
         if(collision.rigidbody != null && collision.rigidbody.tag == "Player")
         {
-            Debug.Log("this is archer");
-            // нанести урон игроку
+            Debug.Log("damage to archer");
+            var archer = collision.rigidbody.GetComponent<archer>();
+            if (archer != null)
+            {
+                archer.TakeDamage(1);
+            }
         }
     }
 
