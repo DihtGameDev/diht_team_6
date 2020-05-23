@@ -6,8 +6,6 @@ TagManager:
   tags:
   - stone
   - box
-  - archer
-
   layers:
   - Default
   - TransparentFX
