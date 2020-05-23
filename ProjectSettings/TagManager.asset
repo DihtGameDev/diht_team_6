@@ -6,8 +6,7 @@ TagManager:
   tags:
   - stone
   - box
-  - archer
-  - enemy
+
   layers:
   - Default
   - TransparentFX
